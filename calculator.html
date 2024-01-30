@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+
+
+<html>
+<head>
+    <title>calculator</title>
+</head>
+    <body></body>
+    <div class="calculator">
+        <input type="text" placeholder="0" class="output" id="input">
+        <div class = "keys">
+            <button class="sign" onclick="display('+')">+</button>
+            <button class="sign"onclick="display('-')">-</button>
+            <button class="sign" onclick="display('*')">*</button>
+            <button class="sign" onclick="display('/')">/</button>
+            <button class="number" onclick="display('1')">1</button>
+            <button class="number" onclick="display('2')">2</button>
+            <button class="number" onclick="display('3')">3</button>
+            <button class="number" onclick="display('4')">4</button>
+            <button class="number" onclick="display('5')">5</button>
+            <button class="number" onclick="display('6')">6</button>
+            <button class="number"onclick="display('7')">7</button>
+            <button class="number"onclick="display('8')">8</button>
+            <button class="number"onclick="display('9')">9</button>
+            <button class="number" onclick="display('0')">0</button>
+            <button class="number"onclick="display('.')">.</button>
+            <button class="number1" onclick="Clear('')">AC</button>
+            <button class="enter"onclick="Calculate()">=</button>
+
+        </div>
+        <script>
+            let outputScreen = document.getElementById("input");
+
+            function display(num){
+                outputScreen.value += num;
+            }
+            function Calculate(){
+                try{
+                    outputScreen.value = eval(outputScreen.value);
+                }
+                catch(err)
+                {
+                    alert("Invalid")
+                }
+             }
+             function Clear(){
+                outputScreen.value = " ";
+             }
+        </script>
+        <style>
+         .calculator{
+                max-inline-size: 353px;
+                
+                border-radius: 10px;
+                overflow: hidden;
+                box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 15), 0px 2px 4px 0px rgba(0, 0, 0, 0.12);
+                margin-left: 35rem;
+                margin-top: 15rem;
+         }
+         .output{
+            font-size: 38px;
+            
+            background-color: black;
+            color: white;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            padding-right: 10px;
+        }
+        .keys{
+            display:grid;
+           
+          
+            background-color: azure;
+          
+            grid-template-columns: auto auto auto auto;
+            grid-gap:1px;
+           
+          }
+          .enter{
+            grid-column: 4 / 5; 
+            grid-row: 2 / span 4; 
+           
+          }
+          .number{
+            
+            padding : 10px;
+            font-size: 25px;
+            color: black;
+           
+            
+          }
+          .sign{
+            padding : 10px;
+            font-size: 25px;
+            color : black;
+            background-color: grey;
+         }
+          .sign:hover{
+            background-color: black;
+            color:white;
+            transform: rotate(5deg);
+         }
+         .sign:active{
+            background-color: grey;
+            color: white;
+         }
+         .enter{
+            background-color: skyblue;
+            font-size: large;
+         }
+         .enter:hover{
+            background-color: cyan;
+            color: black;
+            transform: rotate(5deg);
+         }
+         .enter:active{
+            background-color: skyblue;
+            color :black;
+         }
+         .number1{
+            background-color: red;
+            color : white;
+         }
+         .number1:hover{
+            background-color: darkred;
+            color :white; 
+            transform: rotate(5deg);
+        } 
+        .number1:active{
+            background-color: black;
+            color:darkred;
+            
+            
+        }
+        .number:hover{
+            background-color: black;
+            color:white;
+            transform: rotate(5deg);
+            
+        }
+        .number:active{
+            background-color: white;
+            color:red;
+        }
+        
+        
+        </style>
+    </body>
+        
+        
+    </div>
+</body>
+</html>
